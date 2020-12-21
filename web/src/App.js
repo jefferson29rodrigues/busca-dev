@@ -95,14 +95,14 @@ function App() {
         <ul>
           <li className="dev-item">
             <header>
-              <img src="https://avatars0.githubusercontent.com/u/2254731?s=460&v=4" alt="Diego Fernandes"/>
+              <img src="https://avatars3.githubusercontent.com/u/56448216?s=460" alt="Diego Fernandes"/>
               <div className="user-info">
                 <strong>Diego Fernandes</strong>
                 <span>ReactJS, React Native, Node.js</span>
               </div>
             </header>
             <p>CTO na @Rocketseat. Apaixonado por tecnologias de desenvolvimento web e mobile.</p>
-            <a href="https://github.com/diego3g">Acessar perfil no Github</a>
+            <a href="https://github.com/jefferson29rodrigues">Acessar perfil no Github</a>
           </li>
 
           <li className="dev-item">
