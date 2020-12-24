@@ -6,6 +6,7 @@ import './App.css';
 import './Sidebar.css';
 import './Main.css';
 
+import DevForm from './components/DevForm';
 import DevItem from './components/DevItem';
 
 function App() {
@@ -23,20 +24,8 @@ function App() {
     loadDevs();
   }, []);
 
-  async function handleAddDev(e) {
-    e.preventDefault();
-
-    const response = await api.post('/devs', {
-      github_username,
-      techs,
-      latitude,
-      longitude,
-    });
-
-    console.log(response.data);
-
-    setGithub_username('');
-    setTechs('');
+  async function handleAddDev(data) {
+    const response = await api.post('/devs', data);
 
     setDevs([...devs, response.data]);
   }
@@ -45,7 +34,7 @@ function App() {
     <div id="app">
       <aside>
         <strong>Cadastrar</strong>
-        
+        <DevForm onSubmit={handleAddDev} />
       </aside>
       <main>
         <ul>

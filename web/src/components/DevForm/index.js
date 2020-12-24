@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function DevForm() {
+function DevForm({ onSubmit }) {
     const [github_username, setGithub_username] = useState('');
     const [techs, setTechs] = useState('');
     const [longitude, setLongitude] = useState('');
@@ -25,8 +25,22 @@ function DevForm() {
         )
     }, []);
 
+    async function handleSubmit(e) {
+        e.preventDefault();
+
+        await onSubmit({
+            github_username,
+            techs,
+            latitude,
+            longitude,
+          });
+
+        setGithub_username('');
+        setTechs('');
+    }
+
     return (
-        <form onSubmit={handleAddDev}>
+        <form onSubmit={handleSubmit}>
           <div className="input-block">
             <label htmlFor="github_username">Usuário do Github</label>
             <input 
